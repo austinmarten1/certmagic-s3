@@ -290,9 +290,10 @@ func (s3 *S3) Delete(ctx context.Context, key string) error {
 
 	s3.Logger.Info(fmt.Sprintf("Delete: %v", key))
 
-	err := s3.Client.RemoveObject(context.Background(), s3.Bucket, key, minio.RemoveObjectOptions{})
+	err := s3.Client.RemoveObject(ctx, s3.Bucket, key, minio.RemoveObjectOptions{})
 
 	return err
+
 }
 
 func (s3 *S3) Exists(key string) bool {
