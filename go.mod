@@ -1,4 +1,4 @@
-module github.com/daxxog/certmagic-s3
+module github.com/austinmarten1/certmagic-s3
 
 go 1.14
 
