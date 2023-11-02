@@ -285,7 +285,7 @@ func (s3 *S3) Load(key string) ([]byte, error) {
 	return content, err
 }
 
-func (s3 *S3) Delete(key string) error {
+func (s3 *S3) Delete(ctx context.Context, key string) error {
 	key = s3.KeyPrefix(key)
 
 	s3.Logger.Info(fmt.Sprintf("Delete: %v", key))
